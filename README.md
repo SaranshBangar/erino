@@ -4,11 +4,13 @@ A full-featured Contact Management system, built as part of the Erino SDE Intern
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 The **Contact Management** feature serves as a crucial part of any CRM (Customer Relationship Management) system. It allows users to store and manage important details about their clients or customers in a streamlined, organized way.
 
-### Core Features
+---
+
+## Core Features
 
 1. **Add New Contact**: 
    - Users can create a new contact with details such as First Name, Last Name, Email, Phone Number, Company, and Job Title.
@@ -23,16 +25,19 @@ The **Contact Management** feature serves as a crucial part of any CRM (Customer
   
 4. **Delete Contact**: 
    - Users can remove outdated or duplicate contacts, keeping the contact list clean.
+  
+---
 
-### Use Cases
+## Images
 
-- Quickly add or update client information.
-- Efficiently browse through a large number of contacts using pagination and sorting.
-- Maintain an accurate and relevant contact list to strengthen business relationships.
+![image](https://github.com/user-attachments/assets/a26faacc-09e0-499a-965c-45697cd9acb5)
+![image](https://github.com/user-attachments/assets/606e46cb-6da2-4370-be8a-6dceb6bae843)
+![image](https://github.com/user-attachments/assets/4c0d96c4-8104-44f4-aada-854e6ca3b9a9)
+![image](https://github.com/user-attachments/assets/fe9ca5d3-758a-49ea-8232-742a8cfebc41)
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React, Material UI (MUI)
 - **Backend**: Node.js, Express
@@ -40,29 +45,31 @@ The **Contact Management** feature serves as a crucial part of any CRM (Customer
 
 ---
 
-## 💻 Getting Started
-
-### Prerequisites
+## Prerequisites
 
 - Node.js
 - MySQL
 - npm or yarn
 
-## 🔧 API Endpoints
+---
+
+## API Endpoints
 
 - **POST** `/contacts`: Adds a new contact.
 - **GET** `/contacts`: Retrieves all contacts.
 - **PUT** `/contacts/:id`: Updates a specific contact.
 - **DELETE** `/contacts/:id`: Deletes a contact by ID.
 
-### Error Handling
+---
+
+## Error Handling
 
 - Validates required fields to ensure data integrity.
 - Handles duplicate entries and returns descriptive error messages on API failures.
 
 ---
 
-## 📝 Challenges and Solutions
+## Challenges and Solutions
 
 1. **Challenge**: Ensuring a seamless user experience while managing form validation and error states.
    - **Solution**: Used MUI’s built-in validation and state management to provide real-time feedback and error handling.
@@ -75,7 +82,7 @@ The **Contact Management** feature serves as a crucial part of any CRM (Customer
 
 ---
 
-## 🌟 Evaluation Criteria
+## Evaluation Criteria
 
 - **Functionality**: All CRUD operations are complete and perform seamlessly.
 - **UI Consistency**: MUI components provide a cohesive, responsive interface.
@@ -84,7 +91,7 @@ The **Contact Management** feature serves as a crucial part of any CRM (Customer
 
 ---
 
-## 🤝 Future Improvements
+## Future Improvements
 
 - Implement search and filter functionality for better user experience.
 - Add authentication and user role management for enhanced security.
