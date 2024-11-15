@@ -13,7 +13,14 @@ app.post("/contacts", (req, res) => {
     const { firstName, lastName, email, phoneNumber, company, jobTitle } =
       req.body;
 
-    if (!firstName || !lastName || !email || !phoneNumber || !company || !jobTitle) {
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !phoneNumber ||
+      !company ||
+      !jobTitle
+    ) {
       return res.status(400).send("Please provide all the required fields");
     }
 
@@ -40,7 +47,7 @@ app.get("/contacts", (req, res) => {
         res.status(500).send("Internal Server Error");
         return;
       }
-    res.send(results);
+      res.send(results);
     });
   } catch (err) {
     console.error(`Error fetching contacts : ${err}`);
@@ -49,43 +56,51 @@ app.get("/contacts", (req, res) => {
 });
 
 app.delete("/contacts/:id", (req, res) => {
-    try {
-        const id = req.params.id;
-        connection.query(`DELETE FROM users WHERE id = ${id}`, (err, results) => {
-        if (err) {
-            console.error(`Error deleting contact : ${err}`);
-            res.status(500).send("Internal Server Error");
-            return;
-        }
-        res.send("Contact deleted successfully");
-        });
-    } catch (err) {
+  try {
+    const id = req.params.id;
+    connection.query(`DELETE FROM users WHERE id = ${id}`, (err, results) => {
+      if (err) {
         console.error(`Error deleting contact : ${err}`);
-        res.status(500).send("Internal server error");
-    }
+        res.status(500).send("Internal Server Error");
+        return;
+      }
+      res.send("Contact deleted successfully");
+    });
+  } catch (err) {
+    console.error(`Error deleting contact : ${err}`);
+    res.status(500).send("Internal server error");
+  }
 });
 
 app.put("/contacts/:id", (req, res) => {
-    try {
-        const id = req.params.id;
-        const { firstName, lastName, email, phoneNumber, company, jobTitle } = req.body;
-        if (!firstName || !lastName || !email || !phoneNumber || !company || !jobTitle) {
-            return res.status(400).send("Please provide all the required fields");
-        }
-        const query = `UPDATE users SET firstName = '${firstName}', lastName = '${lastName}', email = '${email}', phoneNumber = '${phoneNumber}', company = '${company}', jobTitle = '${jobTitle}' WHERE id = ${id}`;
-        connection.query(query, (err, results) => {
-        if (err) {
-            console.error(`Error updating contact : ${err}`);
-            res.status(500).send("Internal Server Error");
-            return;
-        }
-        res.send("Contact updated successfully");
-        });
-    } catch (err) {
-        console.error(`Error updating contact : ${err}`);
-        res.status(500).send("Internal server error");
+  try {
+    const id = req.params.id;
+    const { firstName, lastName, email, phoneNumber, company, jobTitle } =
+      req.body;
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !phoneNumber ||
+      !company ||
+      !jobTitle
+    ) {
+      return res.status(400).send("Please provide all the required fields");
     }
-})
+    const query = `UPDATE users SET firstName = '${firstName}', lastName = '${lastName}', email = '${email}', phoneNumber = '${phoneNumber}', company = '${company}', jobTitle = '${jobTitle}' WHERE id = ${id}`;
+    connection.query(query, (err, results) => {
+      if (err) {
+        console.error(`Error updating contact : ${err}`);
+        res.status(500).send("Internal Server Error");
+        return;
+      }
+      res.send("Contact updated successfully");
+    });
+  } catch (err) {
+    console.error(`Error updating contact : ${err}`);
+    res.status(500).send("Internal server error");
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server started at port : ${port}`);
