@@ -13,12 +13,6 @@ export default function App() {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6">Contact Manager</Typography>
-            <Box sx={{ flexGrow: 1 }} />
-            <Link to="/add-contact" style={{ textDecoration: "none" }}>
-              <Typography variant="body1" color="inherit">
-                Add Contact
-              </Typography>
-            </Link>
           </Toolbar>
         </AppBar>
         <Container component="main" sx={{ mt: 4, mb: 4, flex: 1 }}>
